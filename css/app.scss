@@ -1,0 +1,244 @@
+@import "mixins";
+@import "normalize.css";
+
+$dark: #262020;
+$medium: #908B85;
+$light: #efe6e6;
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: lighten($light, 1%);
+  background: $dark;
+}
+
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 12px;
+  @include clearfix();
+}
+.wrapper {
+  width: 100%;
+  background: lighten($medium, 10%);
+  color: $dark;
+  margin: -30px 0;
+  padding: 20px 0;
+  .container {
+    margin: 0 auto;
+  }
+
+  a {
+    color: #00748c;
+
+    &:hover, &:active {
+      color: lighten(#00748c, 5%);
+    }
+  }
+}
+
+.col {
+  float: left;
+  @include box-sizing();
+
+  &.span-1-3 {
+    width: percentage(1/3);
+  }
+}
+
+::-moz-selection {
+  background: $light;
+  text-shadow: none;
+  color: #000;
+}
+::selection {
+  background: $light;
+  text-shadow: none;
+  color: #000;
+}
+p {
+  font-size: 1.6em;
+  &.lead {
+    font-size: 2.3em;
+    margin-bottom: 0.5em;
+  }
+  &.small, small {
+    font-size: 1.3em;
+  }
+  &.footer {
+    color: $medium;
+  }
+  strong {
+    letter-spacing: 1px;
+    color: #fff;
+  }
+}
+img.stretch {
+  width: 50%;
+  min-width: 320px;
+}
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 1em 0;
+  padding: 0;
+}
+a {
+  color: #83b9c4;
+  text-decoration: none;
+  &:hover, &:active {
+    color: lighten(#83b9c4, 10%);
+  }
+}
+label {
+  font-size: 1.6em;
+  color: $medium;
+}
+input {
+  font-size: 1.6em;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 6px;
+  background: #000;
+  color: #fff;
+  outline: none;
+  margin-bottom: 0.4em;
+
+  &:focus {
+    background: #070707;
+  }
+}
+
+.infobox {
+  padding: 10px 20px;
+  background: lighten($dark, 8%);
+  text-align: left;
+  font-size: 0.9em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-top: 20px solid lighten($dark, 12%);
+  border-bottom: 20px solid lighten($dark, 4%);
+
+  p {
+    margin: 0;
+
+    .more {
+      display: none;
+    }
+  }
+}
+
+.links {
+  text-align: left;
+
+  p {
+    font-size: 1.2em;
+    padding: 0.5em 0.5em 0;
+  }
+}
+
+.button, button {
+  display: inline-block;
+  color: #fff;
+  background: #598ba8;
+  padding: 0 16px;
+  border: 0;
+  font-size: 1.6em;
+  height: 40px;
+  line-height: 40px;
+  &:hover {
+    background: lighten(#598ba8, 10%);
+    color: #fff;
+  }
+}
+
+.icon {
+  display: block;
+  @include transition-transform(0.5s);
+
+  svg {
+    width: 66%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+
+    path {
+      fill: $dark;
+      @include transition(fill 0.5s);
+    }
+  }
+
+  #projects-icon {
+    padding-left: 30px;
+    .st0 {
+      fill: none;
+      stroke: $dark;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+      @include transition(stroke 0.5s);
+    }
+    .st1 {
+      fill: lighten($medium, 10%);
+    }
+  }
+
+  .caption {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: $dark;
+    font-weight: bold;
+    padding-top: 0.5em;
+    white-space: nowrap;
+    overflow: visible;
+    @include transition(color 0.5s);
+  }
+
+  &:hover {
+    @include transform(scale(1.1));
+
+    svg {
+      path {
+        fill: lighten($dark, 12%);
+      }
+    }
+
+    #projects-icon .st0 {
+      stroke: lighten($dark, 12%);
+    }
+
+    .caption {
+      color: lighten($dark, 12%);
+    }
+  }
+
+}
+
+
+#success {
+  display: none;
+  padding: 12px;
+  background: #518939;
+  color: #fff;
+}
+#hidden_iframe {
+  display: none;
+}
+
+.clearfix {
+  @include clearfix();
+}
