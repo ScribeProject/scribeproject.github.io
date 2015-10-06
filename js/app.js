@@ -9,6 +9,8 @@
     }
 
     App.prototype.init = function(){
+      var _this = this;
+
       // form submission
       $('#mailing-list-form').submit(function(){
         $(this).hide();
@@ -29,6 +31,16 @@
           maxHeight: 2000
         }, 1000);
       });
+
+      $('.scroll-to-link').on('click', function(e){
+        _this.scrollTo($(this).attr('href'));
+      });
+    };
+
+    App.prototype.scrollTo = function(id){
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 2000);
     };
 
     return App;

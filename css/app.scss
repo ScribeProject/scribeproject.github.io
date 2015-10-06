@@ -44,6 +44,17 @@ html {
       color: lighten(#00748c, 5%);
     }
   }
+
+  &.secondary {
+    background: lighten($dark, 8%);
+    color: $light;
+    a {
+      color: #83b9c4;
+      &:hover, &:active {
+        color: lighten(#83b9c4, 10%);
+      }
+    }
+  }
 }
 
 .col {
@@ -145,6 +156,18 @@ input {
   p {
     font-size: 1.2em;
     padding: 0.5em 0.5em 0;
+  }
+}
+
+.projects {
+  font-size: 0.7em;
+  padding: 0.5em 0.5em 0;
+  small {
+    font-size: 0.6em;
+  }
+  img {
+    width: 80%;
+    height: auto;
   }
 }
 
